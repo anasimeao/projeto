@@ -1,0 +1,165 @@
+*{
+  Margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+--text-color: black;
+--bg-url: url(./assets/bg-mobile-light.jpg);
+--stroke-color: rgba(0, 0, 0, 0.5);
+--surface-color: rgba(0, 0, 0, 0.05);
+--surface-color-hover:rgba(0, 0, 0, 0.02);
+--hightlight-color: rgba(0, 0, 0, 0.1);
+--switch-bg-url:url(./assets/sun.svg)
+}
+.dark{ 
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile-dark.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --hightlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url:url(./assets/moon-star.svg)
+}
+body {
+  Background: var(--bg-url) 
+  no-repeat top center/cover; 
+  /*
+  background-image: url(./assets/bg-mobile-dark.jpg);
+  background-repeat:no-repeat ;
+  background-position:top center;
+  background-size: cover;
+  */
+  /*backgound: color image reapet position /size
+  */ 
+  
+  /*isso tranformou todas as propriedades de cima em uma unica tag*/
+}
+/*div é um elemento inline e não é possivel usar o margin:auto*/
+
+body *{
+  font-family: 'Inter', sans-serif;
+  color:var(--text-color);
+}
+#container{
+  width: 360px;
+  height:712px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 56px;
+  padding: 0 24px;
+  /*Ou podemos suprimir todos esse margin e deixar tudo em uma unica linha = margin: 56px(será a margem de cima), auto (será aplicado nas laterais), 0px (será aplicado na parte de baixo)*/
+} 
+
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+/* essa é uma outra maneira de alinhar ao meio um elemento inline:
+#profile img{
+  display: block;
+  width: 112px;
+  margin: auto;
+}*/
+#profile img{
+    width: 112px;
+ }
+#profile p{
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+  
+  }
+#switch button {
+width: 32px;
+height: 32px;
+background:white var(--switch-bg-url) no-repeat center;
+border:0;
+border-radius: 50%;
+
+position: absolute;
+top:50%;
+left: 0;
+z-index: 1;
+transform: translateY(-50%); 
+}
+.dark #switch button{
+  right: 0;
+  left: initial;
+}
+#switch span{
+  display: block;
+  width: 64px;
+  height: 24px;
+  background:var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+ul{
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+ul li a{
+  border:1px solid var(--stroke-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 52px;
+  padding: 16px 24px;
+  background:var(--surface-color);
+  border: 1px solid var(--str);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.2s;
+}
+
+/* pseudo-selector - a tranformação quando se passa o mouse sobre o item*/
+ul li a:hover{
+  background: var(--surface-color-hover);
+  border: 1.5px solid #000000;
+  backdrop-filter: blur(4px);
+}
+
+#social-link {
+  display: flex;
+  justify-content: center;
+  padding:24px 0;
+  font-size: 24px;
+}
+#social-link a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0,2s ;
+    border-radius: 50%;
+}
+#social-link a:hover {
+  background:  var(--hightlight-color);
+  padding: 16px;
+  transition: background 0.2s;
+}
+
+footer {
+ padding:24px 0;
+ text-align: center;
+ font-size: 14px;
+}
