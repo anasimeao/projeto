@@ -130,7 +130,6 @@ ul li a{
 
   transition: background 0.2s;
 }
-
 /* pseudo-selector - a tranformação quando se passa o mouse sobre o item*/
 ul li a:hover{
   background: var(--surface-color-hover);

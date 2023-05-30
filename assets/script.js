@@ -14,6 +14,7 @@ function toggleMod() {
     img.alt =
       "foto de Ana Paula Simeão usando óculos, camiseta preta e fundo branco"
   }
+  
 }
 
 //if(html.classList.contains('dark'))
