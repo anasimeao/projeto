@@ -89,10 +89,13 @@ top:50%;
 left: 0;
 z-index: 1;
 transform: translateY(-50%); 
+animation: slide-back 0.2s;
+}
+#switch button:hover{
+  outline:8px solid var(--hightlight-color);
 }
 .dark #switch button{
-  right: 0;
-  left: initial;
+  animation: slide-in 0.4s forwards;
 }
 #switch span{
   display: block;
@@ -170,5 +173,22 @@ footer {
   }
   .dark{
     --bg-url: url(./assets/bg-desktop-dark.jpg);
+  }
+}
+/*animation*/
+@keyframes slide-in {
+  From{
+   left: 0; 
+  }
+  to{
+  left:50%;
+}
+}
+@keyframes slide-back {
+  From{
+   left: 50%; 
+  }
+  to{
+  left:0%;
   }
 }
